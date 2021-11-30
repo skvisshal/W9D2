@@ -34,13 +34,21 @@ class View {
     const pos = square.dataset.pos;
     const parsedPos = JSON.parse(pos);
 
-    console.log(parsedPos);
-    this.game.playMove(parsedPos);
+    const playerMark = this.game.currentPlayer
+    console.log(playerMark);
 
-    const playerMark = this.game.currentPlayer;
+
+    this.game.playMove(parsedPos);
 
     square.innerText = playerMark;
     square.classList.add(playerMark);
+
+    if (this.game.isOver()) {
+      this.el.removeEventListener('click', this.handleClick);
+      const winnerName = this.game.winner();
+      const heading = document.querySelector("h1");
+      heading.innerText = `Congratulations, ${winnerName}`;
+    }
   }
 
 }
