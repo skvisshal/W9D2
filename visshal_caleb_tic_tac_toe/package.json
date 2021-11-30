@@ -1,7 +1,6 @@
 {
   "name": "visshal_caleb_tic_tac_toe",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,5 +12,6 @@
   "dependencies": {
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1"
-  }
+  },
+  "description": ""
 }
